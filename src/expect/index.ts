@@ -1,3 +1,4 @@
+const _ = require('lodash');
 class Expect {
   private value: unknown;
 
@@ -10,7 +11,7 @@ class Expect {
   }
 
   toEqual(comparison: unknown) {
-    return this.value == comparison
+    return _.isEqual(this.value, comparison)
   }
 
   toStrictlyEqual(comparison: unknown) {
